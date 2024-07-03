@@ -84,7 +84,10 @@ app.delete('/products/:id', async(req, res)=>{
 })
 
 
-mongoose.connect('mongodb+srv://Pretam:Pretam2003$@pretamapi.ldbxr1j.mongodb.net/Node-API?retryWrites=true&w=majority&appName=PretamAPI')
+mongoose.connect('mongodb+srv://Pretam:Pretam2003$@pretamapi.ldbxr1j.mongodb.net/Node-API?retryWrites=true&w=majority&appName=PretamAPI',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}) 
 .then(()=>{
     console.log('connected to MongoDB')
     app.listen(3000, ()=>{
