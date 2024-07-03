@@ -96,3 +96,8 @@ mongoose.connect('mongodb+srv://Pretam:Pretam2003$@pretamapi.ldbxr1j.mongodb.net
 }).catch((error)=>{
     console.log(error)
 })
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+  });
